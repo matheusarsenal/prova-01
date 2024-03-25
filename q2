@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int h(int M, int N) {
+    if (N == 1) {
+        return M + 1;
+    } else if (M == 1) {
+        return M + 1;
+    } else {
+        return h(M, M - 1) + h(M - 1, N);
+    }
+}
+
+int main() {
+    int resultado = h(4, 3);
+    printf("%d\n", resultado);
+
+    return 0;
+}
