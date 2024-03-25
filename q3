@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+
+int buscarelemento(int lista[10], int inteiro, int *rep){
+    int com = 0, mid, end = 11;
+    while (end >= com){
+        *rep += 1;
+        mid = com + (end - com) / 2;
+
+        if (lista[mid] == inteiro){
+            return mid + 1;
+        }
+
+        if (lista[mid] < inteiro){
+            com = mid + 1;
+        }
+        else{
+            end = mid - 1;
+        }
+    }
+    return -1;
+}
+
+int main(){
+    int iteracoes = 0, busc;
+    int inteiroids[10] = {0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111, 1000, 1001, 1010};
+
+    scanf("%d", &busc);
+
+    if (buscarelemento(inteiroids, busc, &iteracoes) != -1){
+        printf("inteiro encontrado %d\n", buscarelemento(inteiroids,busc,&iteracoes));
+        printf("Teve %d iteracoes no programa", iteracoes);
+    }
+    else{
+        printf("inteiro não encontrado");
+    }
+    return 0;
+}
