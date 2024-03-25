@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    int A, B;
+    printf(A);
+    printf(B);
+    scanf("%d%d",&A, &B);
+    int diferenca = A - B;
+    int B*p = diferenca
+    printf("valor de B agora e\n",B);
+
+
+    return 0;
+}
