@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_MSG_LEN 50
+
+void escreverMensagem(char **mensagem);
+void realizarAnalise(char *mensagem);
+void exibirMatriz(char *mensagem);
+void mostrarCaracterSomado(char *mensagem);
+void resetarStringEMatriz(char **mensagem);
+void substituirVogaisDaMensagemPorLetrasMaiusculas(char *mensagem);
+
+int main() {
+    char *mensagem = NULL;
+    int opcao;
+
+    mensagem = (char *)malloc((MAX_MSG_LEN + 1) * sizeof(char)); 
+
+    do {
+        printf("\nMenu de Opções:\n");
+        printf("1. Escrever uma mensagem\n");
+        printf("2. Realizar análise em matriz\n");
+        printf("3. Exibir matriz\n");
+        printf("4. Mostrar o caractere pela soma de vogais e consoantes\n");
+        printf("5. Resetar a string e a matriz\n");
+        printf("6. Substituir as vogais da mensagem por letras em maiúsculo\n");
+        printf("0. Sair\n");
+
+        printf("\nEscolha uma opção: ");
+        scanf("%d", &opcao);
+
+        switch (opcao) {
+            case 1:
+                escreverMensagem(&mensagem);
+                break;
+            case 2:
+                realizarAnalise(mensagem);
+                break;
+            case 3:
+                exibirMatriz(mensagem);
+                break;
+            case 4:
+                mostrarCaracterSomado(mensagem);
+                break;
+            case 5:
+                resetarStringEMatriz(&mensagem);
+                break;
+            case 6:
+                substituirVogaisDaMensagemPorLetrasMaiusculas(mensagem);
+                break;
+            case 0:
+                printf("Saindo...\n");
+                if (mensagem != NULL) {
+                    free(mensagem);
+                }
+                break;
+            default:
+                printf("Opção inválida. Por favor, escolha uma opção válida.\n");
+        }
+    } while (opcao != 0);
+
+    return 0;
+}
+
+void escreverMensagem(char **mensagem) {
+    printf("Digite a mensagem (até %d caracteres): ", MAX_MSG_LEN);
+    scanf(" %[^\n]s", *mensagem);
+    printf("Mensagem escrita: %s\n", *mensagem);
+}
+
+void realizarAnalise(char *mensagem) {
+    
+}
+
+void exibirMatriz(char *mensagem) {
+    
+}
+
+void mostrarCaracterSomado(char *mensagem) {
+    
+}
+
+void resetarStringEMatriz(char **mensagem) {
+    free(*mensagem);
+    *mensagem = NULL;
+    printf("String e matriz resetadas com sucesso!\n");
+}
+
+void substituirVogaisDaMensagemPorLetrasMaiusculas(char *mensagem) {
+    
+}
